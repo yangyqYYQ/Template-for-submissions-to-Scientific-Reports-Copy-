@@ -1,39 +1,34 @@
 \documentclass[fleqn,10pt]{wlscirep}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\title{Scientific Reports Title to see here}
+\title{Preliminary Comparison of CRISPR/Cas9-based Screening Data Analysis Algorithms}
 
-\author[1,*]{Alice Author}
-\author[2]{Bob Author}
-\author[1,2,+]{Christine Author}
-\author[2,+]{Derek Author}
-\affil[1]{Affiliation, department, city, postcode, country}
-\affil[2]{Affiliation, department, city, postcode, country}
-
-\affil[*]{corresponding.author@email.example}
-
-\affil[+]{these authors contributed equally to this work}
-
-%\keywords{Keyword1, Keyword2, Keyword3}
+\author[1,*]{Y.Q. Yang}
 
 \begin{abstract}
-Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations. Example Abstract. Abstract must not include subheadings or citations.
+In the opening report of CRISPR/Cas9-based Screening Data Analysis, I introduced MaGeCK and BAGEL, which are both CRISPR/Cas9-based screening data analysis algorithms that can be applied for essential gene identification.  However, I only summarized the principles of two algorithms, but did not explicitly compare the difference between them in all aspects.  Therefore, I added detailed comparison information in this report, and preliminary process the screening data given by Professor Wang. Due to lack of time as well as corresponding data, the screening data were only calculated via MaGeCK.
 \end{abstract}
 \begin{document}
 
 \flushbottom
 \maketitle
-% * <john.hammersley@gmail.com> 2015-02-09T12:07:31.197Z:
-%
-%  Click the title above to edit the author information and abstract
-%
+
 \thispagestyle{empty}
 
-\noindent Please note: Abbreviations should be introduced at the first mention in the main text – no abbreviations lists. Suggested structure of main text (not enforced) is provided below.
+\section*{Background}
 
-\section*{Introduction}
+MaGeCK and BAGEL are two known tools that have been specifically designed for CRISPR/CAS9-based essential gene identification. In order to find out which relatively performs better, I have to compare them from both their detailed algorithms in different steps and the actual analysis results obtained from on our own reserach data.  According to the above requirements, I generally planned my project workflow as below:
 
-The Introduction section, of referenced text\cite{Figueredo:2009dg} expands on the background of the work (some overlap with the Abstract is acceptable). The introduction should not include subheadings.
+\begin{itemize}
+    \item (1) Compare the principle of screening data analysis between two methods in all aspects(listed in order):
+        \subitem read count calculation;
+        \subitem read count normalization;
+        \subitem sgRNA ranking(not exist in BAGEL, which will be explained later)
+    \item (2) Rank sgRNA and identify essential genes via two methods based on absolutely the same screening data.
+    \item (3) Identify enriched pathway via MaGeCK only since this function is not inclued in BAGEL.
+    \item (4) Compare MaGeCK with other pathway analysis tools and find out which one does a better job.
+    \item (5) Summarize the tools that perform well at each step, improve the deficiencies, and thus generating a new workflow for CRISPR/Cas9-based essential gene and enriched pathway identification.
+    \end{itemize}
 
 \section*{Results}
 
@@ -43,10 +38,6 @@ Up to three levels of \textbf{subheading} are permitted. Subheadings should not 
 
 Example text under a subsection. Bulleted lists may be used where appropriate, e.g.
 
-\begin{itemize}
-\item First item
-\item Second item
-\end{itemize}
 
 \subsubsection*{Third-level section}
  
