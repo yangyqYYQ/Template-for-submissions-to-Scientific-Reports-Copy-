@@ -23,7 +23,7 @@ MAGeCK and BAGEL are two known tools that have been specifically designed for CR
     \item (1) Compare the principle of screening data analysis between two methods in all aspects(listed in order):
         \subitem read count calculation;
         \subitem read count normalization;
-        \subitem sgRNA ranking(not exist in BAGEL, which will be explained later);
+        \subitem sgRNA ranking;
         \subitem essential gene ranking;
     \item (2) Rank sgRNA and identify essential genes via two methods based on absolutely the same screening data.
     \item (3) Identify enriched pathway via MAGeCK only since this function is not inclued in BAGEL.
@@ -33,14 +33,40 @@ MAGeCK and BAGEL are two known tools that have been specifically designed for CR
 
 \section*{Results}
 
-\subsection*{Step-by-step principle comparison between MAGeCK}
+\subsection*{Step-by-step Principle Comparison between MAGeCK and BAGEL}
 
-Example text under a subsection. Bulleted lists may be used where appropriate, e.g.
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{lll}
+    \hline
+    Method & MAGeCK & BAGEL \\
+    \hline
+    read count calculation:\\
+    $\quad$regard as "match probe" \\
+    $\quad$when encounter single base mismatch & $\times$ & not mentioned \\
+    \hline
+    read count normalization & median normalization & not mentioned \\
+    \hline
+    sgRNA ranking:\\
+    $\quad$basis of sgRNA abundancy testing \\
+    $\quad$(between treatment and control)& p-value retrieved from NB model & log fold changes of frequency distribution\\
+    \hline
+    essential gene ranking:\\
+    $\quad$algorithm & $\alpha$-RRA or MLS(in updated versions)& Bayes Factor\\
+    $\quad$require reference geneset of training & $\times$ & \checkmark \\
+    $\quad$require boundary values for scoring& $\times$ & \checkmark \\
+    $\quad$have speed-up optimization& $\times$ & \checkmark \\
+    \hline
+    enriched pathway ranking & $\alpha$-RRA or MLS(in updated versions)& $\times$\\
+    \hline
+    \end{tabular}
+    \caption{\label{tab:comparison}step-by-step principle comparison between MAGeCK and BAGEL}
+    \end{table}
 
-
-\subsubsection*{Third-level section}
  
-Topical subheadings are allowed.
+Detailed principle comparison between MAGeCK and BAGEL is listed in Table \ref{tab:comparison}.  It is clear that MAGeCK and BAGEL identify essential genes in totally distinct methods.  Although the developer of BAGEL claims that BAGEL has lower False Discovery Rate(FDR) rather than MAGeCK since the latter one ranks essential gene simply based on the experimental data and hence hard to prevent from unexpected data fluctuation; however, we still cannot rush to a final conclusion immediately without running these methods on our own data.
+From my personal view, we should take on several experiments to test whether BAGEL can be reliable for our own-data analysis since we cannot find enough explanation about the details for each step.  First, we should test whether the essential-gene ranking results would change with the existence of different reference geneset.  Second, we should figure out its read count calculation and normalization methods to see what factors would affect the operating results.
+
 
 \section*{Discussion}
 
@@ -78,19 +104,6 @@ The corresponding author is responsible for submitting a \href{http://www.nature
 \label{fig:stream}
 \end{figure}
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{|l|l|l|}
-\hline
-Condition & n & p \\
-\hline
-A & 5 & 0.1 \\
-\hline
-B & 10 & 0.01 \\
-\hline
-\end{tabular}
-\caption{\label{tab:example}Legend (350 words max). Example legend text.}
-\end{table}
 
 Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
 
