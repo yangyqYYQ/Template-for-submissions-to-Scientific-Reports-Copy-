@@ -1,6 +1,7 @@
 \documentclass[fleqn,10pt]{wlscirep}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage{listings}
 \title{Preliminary Comparison of CRISPR/Cas9-based Screening Data Analysis Algorithms}
 
 \author[1,*]{Y.Q. Yang}
@@ -67,35 +68,19 @@ MAGeCK and BAGEL are two known tools that have been specifically designed for CR
 Detailed principle comparison between MAGeCK and BAGEL is listed in Table \ref{tab:comparison}.  It is clear that MAGeCK and BAGEL identify essential genes in totally distinct methods.  Although the developer of BAGEL claims that BAGEL has lower False Discovery Rate(FDR) rather than MAGeCK since the latter one ranks essential gene simply based on the experimental data and hence hard to prevent from unexpected data fluctuation; however, we still cannot rush to a final conclusion immediately without running these methods on our own data.
 From my personal view, we should take on several experiments to test whether BAGEL can be reliable for our own-data analysis since we cannot find enough explanation about the details for each step.  First, we should test whether the essential-gene ranking results would change with the existence of different reference geneset.  Second, we should figure out its read count calculation and normalization methods to see what factors would affect the operating results.
 
+\subsection*{Essential Genes identification based on our own reserach data}
+In order to get familiar with the running workflow of these two methods and do preparation for later analysis, I analyzed the data given by Professor Wang via MAGeCK and got the analysis result, which was attached at the end of this report.  
+
 
 \section*{Discussion}
+I have met some problems while running the program.
 
-The Discussion should be succinct and must not contain subheadings.
+Noting that VISPR is a Visulization methods specialized for MAGeCK results that has been intergrated with MAGeCK recently, I decided to try running the entire process on the command "MAGeCK-VISPR" instead of the regularly used command "MAGeCK".  However, an unexpected error occurred in read count calculation step, showing that "command returned non-zero exit status 255".  I don't know the meaning of this error, nor could I find any similar case online as reference, so I have no chance but use the regular command "MAGeCK" instead, feeling sad not having experienced the visulizaiton function.
 
-\section*{Methods}
+Even worse, I incorrectly estimated the data size as well as the time the program need for running.  I thought the program would run up to an hour;   however, when I realized the dramatically expensive computation cost, it was too late for me to make it up. In brief, there were 240496 predefined sgRNAs and 116315972 of total reads for the raw data of each case, which was far larger than I expected.  Furthermore, I meant to compare the differnce between $\alpha$-RRA and MLS, which are both essential gene ranking algorithm.  I found in the blog of MAGeCK previously that MLS performs better than $\alpha$-RRA in essential gene scoring, but it didn't mention that MLS is far more computationally expensive, which takes approximately an hour for simply one permutation.  Consequently, I fail to finish the MLE calculation, as well as the enriched pathway identification that I should have done. 
 
-Topical subheadings are allowed. Authors must ensure that their Methods section includes adequate experimental and characterization data necessary for others in the field to reproduce their work.
 
-\bibliography{sample}
 
-\noindent LaTeX formats citations and references automatically using the bibliography records in your .bib file, which you can edit via the project menu. Use the cite command for an inline citation, e.g.  \cite{Hao:gidmaps:2014}.
-
-For data citations of datasets uploaded to e.g. \emph{figshare}, please use the \verb|howpublished| option in the bib entry to specify the platform and the link, as in the \verb|Hao:gidmaps:2014| example in the sample bibliography file.
-
-\section*{Acknowledgements (not compulsory)}
-
-Acknowledgements should be brief, and should not include thanks to anonymous referees and editors, or effusive comments. Grant or contribution numbers may be acknowledged.
-
-\section*{Author contributions statement}
-
-Must include all authors, identified by initials, for example:
-A.A. conceived the experiment(s),  A.A. and B.A. conducted the experiment(s), C.A. and D.A. analysed the results.  All authors reviewed the manuscript. 
-
-\section*{Additional information}
-
-To include, in this order: \textbf{Accession codes} (where applicable); \textbf{Competing interests} (mandatory statement). 
-
-The corresponding author is responsible for submitting a \href{http://www.nature.com/srep/policies/index.html#competing}{competing interests statement} on behalf of all authors of the paper. This statement must be included in the submitted article file.
 
 \begin{figure}[ht]
 \centering
@@ -104,7 +89,5 @@ The corresponding author is responsible for submitting a \href{http://www.nature
 \label{fig:stream}
 \end{figure}
 
-
-Figures and tables can be referenced in LaTeX using the ref command, e.g. Figure \ref{fig:stream} and Table \ref{tab:example}.
 
 \end{document}
