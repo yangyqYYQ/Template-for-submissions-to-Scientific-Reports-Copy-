@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1543331243 "main.aux" "main.bbl" "main" 1543331949
+["bibtex main"] 1543332393 "main.aux" "main.bbl" "main" 1543332395
   "./naturemag-doi.bst" 1543307939 36153 a59af0557a0f0c0e857533e984f737bb ""
-  "main.aux" 1543331948 1679 6e41067b06377d042a0ca8558cf7789f ""
+  "main.aux" 1543332395 1679 6e41067b06377d042a0ca8558cf7789f ""
   "sample.bib" 1543307939 604 dd7681d9cb62086108bc9b881e2ad28d ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1543331947 "/Users/super_yyq/Template-for-submissions-to-Scientific-Reports-Copy-/main.tex" "main.pdf" "main" 1543331949
-  "/Users/super_yyq/Template-for-submissions-to-Scientific-Reports-Copy-/main.tex" 1543331947 4716 630be44062d88d27171f951f44c8d3aa ""
+["pdflatex"] 1543332394 "/Users/super_yyq/Template-for-submissions-to-Scientific-Reports-Copy-/main.tex" "main.pdf" "main" 1543332395
+  "/Users/super_yyq/Template-for-submissions-to-Scientific-Reports-Copy-/main.tex" 1543332391 4702 b98ee636cc4635ca901a816e90cd0a6a ""
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc" 1480098666 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm" 1480098688 1292 bd42be2f344128bff6d35d98474adfe3 ""
@@ -139,14 +139,14 @@
   "jabbrv-ltwa-all.ldf" 1543307939 49107 ef89484545be005458b7162f37634c99 ""
   "jabbrv-ltwa-en.ldf" 1543307939 268657 c239d07b7cc89e14f920c5fc8ed8d12e ""
   "jabbrv.sty" 1543307939 15480 2106da179daf9d5a102407956ba23e0c ""
-  "main.aux" 1543331948 1679 6e41067b06377d042a0ca8558cf7789f ""
-  "main.bbl" 1543331244 753 20a6b7c5922cff01f2a6c36298a34884 "bibtex main"
-  "main.out" 1543331948 45 2903cad1f1659d139f8c77aed7a41c8d ""
-  "main.tex" 1543331947 4716 630be44062d88d27171f951f44c8d3aa ""
+  "main.aux" 1543332395 1679 6e41067b06377d042a0ca8558cf7789f ""
+  "main.bbl" 1543332394 753 20a6b7c5922cff01f2a6c36298a34884 "bibtex main"
+  "main.out" 1543332395 45 2903cad1f1659d139f8c77aed7a41c8d ""
+  "main.tex" 1543332391 4702 b98ee636cc4635ca901a816e90cd0a6a ""
   "stream.jpg" 1543307939 379752 0d2b78190bb8e3a8b437b513aa4c6aaa ""
   "wlscirep.cls" 1543307939 5788 9df2749839c3a8af12c7b5623dab1715 ""
   (generated)
-  "main.out"
   "main.pdf"
-  "main.aux"
+  "main.out"
   "main.log"
+  "main.aux"

@@ -6,7 +6,7 @@
 \author[1,*]{Y.Q. Yang}
 
 \begin{abstract}
-In the opening report of CRISPR/Cas9-based Screening Data Analysis, I introduced MaGeCK and BAGEL, which are both CRISPR/Cas9-based screening data analysis algorithms that can be applied for essential gene identification.  However, I only summarized the principles of two algorithms, but did not explicitly compare the difference between them in all aspects.  Therefore, I added detailed comparison information in this report, and preliminary process the screening data given by Professor Wang. Due to lack of time as well as corresponding data, the screening data were only calculated via MaGeCK.
+In the opening report of CRISPR/Cas9-based Screening Data Analysis, I introduced MAGeCK and BAGEL, which are both CRISPR/Cas9-based screening data analysis algorithms that can be applied for essential gene identification.  However, I only summarized the principles of two algorithms, but did not explicitly compare the difference between them in all aspects.  Therefore, I added detailed comparison information in this report, and preliminary process the screening data given by Professor Wang. Due to lack of time as well as corresponding data, the screening data were only calculated via MAGeCK.
 \end{abstract}
 \begin{document}
 
@@ -17,24 +17,23 @@ In the opening report of CRISPR/Cas9-based Screening Data Analysis, I introduced
 
 \section*{Background}
 
-MaGeCK and BAGEL are two known tools that have been specifically designed for CRISPR/CAS9-based essential gene identification. In order to find out which relatively performs better, I have to compare them from both their detailed algorithms in different steps and the actual analysis results obtained from on our own reserach data.  According to the above requirements, I generally planned my project workflow as below:
+MAGeCK and BAGEL are two known tools that have been specifically designed for CRISPR/CAS9-based essential gene identification. In order to find out which relatively performs better, I have to compare them from both their detailed algorithms in different steps and the actual analysis results obtained from on our own reserach data.  According to the above requirements, I generally planned my project workflow as below:
 
 \begin{itemize}
     \item (1) Compare the principle of screening data analysis between two methods in all aspects(listed in order):
         \subitem read count calculation;
         \subitem read count normalization;
-        \subitem sgRNA ranking(not exist in BAGEL, which will be explained later)
+        \subitem sgRNA ranking(not exist in BAGEL, which will be explained later);
+        \subitem essential gene ranking;
     \item (2) Rank sgRNA and identify essential genes via two methods based on absolutely the same screening data.
-    \item (3) Identify enriched pathway via MaGeCK only since this function is not inclued in BAGEL.
-    \item (4) Compare MaGeCK with other pathway analysis tools and find out which one does a better job.
+    \item (3) Identify enriched pathway via MAGeCK only since this function is not inclued in BAGEL.
+    \item (4) Compare MAGeCK with other pathway analysis tools and find out which one does a better job.
     \item (5) Summarize the tools that perform well at each step, improve the deficiencies, and thus generating a new workflow for CRISPR/Cas9-based essential gene and enriched pathway identification.
     \end{itemize}
 
 \section*{Results}
 
-Up to three levels of \textbf{subheading} are permitted. Subheadings should not be numbered.
-
-\subsection*{Subsection}
+\subsection*{Step-by-step principle comparison between MAGeCK}
 
 Example text under a subsection. Bulleted lists may be used where appropriate, e.g.
 
