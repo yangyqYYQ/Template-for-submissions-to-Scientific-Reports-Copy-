@@ -241,9 +241,12 @@ INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/helvetic/phvb8t.vf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/helvetic/phvb8r.tfm
-INPUT stream.jpg
-INPUT ./stream.jpg
-INPUT ./stream.jpg
+INPUT up_down.png
+INPUT ./up_down.png
+INPUT ./up_down.png
+INPUT down_up.png
+INPUT ./down_up.png
+INPUT ./down_up.png
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/times/ptmr8t.tfm
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/adobe/times/zptmcm7y.vf
 INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm

@@ -69,7 +69,15 @@ Detailed principle comparison between MAGeCK and BAGEL is listed in Table \ref{t
 From my personal view, we should take on several experiments to test whether BAGEL can be reliable for our own-data analysis since we cannot find enough explanation about the details for each step.  First, we should test whether the essential-gene ranking results would change with the existence of different reference geneset.  Second, we should figure out its read count calculation and normalization methods to see what factors would affect the operating results.
 
 \subsection*{Essential Genes identification based on our own reserach data}
-In order to get familiar with the running workflow of these two methods and do preparation for later analysis, I analyzed the data given by Professor Wang via MAGeCK and got the analysis result, which was attached at the end of this report.  
+In order to get familiar with the running workflow of these two methods and do preparation for later analysis, I analyzed the data given by Professor Wang via MAGeCK and got the analysis result, which was attached at the end of this report. 
+
+In a regular workflow of MAGeCK operation, I have to prepare two groups of CRISPR/Cas9-based screening data.  One is the group treated with sgRNAs, and the other is the control group.  However, this time what I have got is two distinct groups with different sgRNA treatment.  One of which shows a upper concentration of cd69 proteins, while the other shows the opposite.  I doubt whether the data could be processed properly, so I asked Professor Wang for help.  He suggested that I could convert sample and control, and perform two sets of calculations respectively so as to reduce the error as much as possible. 
+
+I calculated the read count in twice respectively as well, and retrieved two absolutely the same result in return.  This could tell us that the read count process is independent between different groups of data.
+
+Contrary to the situation that happened in read count calculation step, completely different essential gene results are generated with $\alpha$-RRA scoring algorithm.  When regarding the cd69 higher expressed group as treatment group and lower expressed one as control, four genes are significantly essential: GRAP2, CCNL1, ZAP70, DOCK2.(see in Figure \ref{fig:up_down})  In contrast, three genes are regarded as essential in the converted analysis, that is: POFUT1, CTBP1, API5. (see in Figure \ref{fig:down_up}) 
+
+Due to some limitation in the data I obtained, I decided to suspend the operation of BAGEL.  First, I am not sure whether BAGEL can perform properly under such groups of data.  Second, the genes I analyzed are immune-related, but the reference geneset provided by developers are cancer-related.  Considering that BAGEL is a supervised-machine learning like analysis method amoung which the selection of training data plays the key role in the method performance, I think is vital finding a much more proper reference geneset.
 
 
 \section*{Discussion}
@@ -84,10 +92,17 @@ Even worse, I incorrectly estimated the data size as well as the time the progra
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=\linewidth]{stream}
-\caption{Legend (350 words max). Example legend text.}
-\label{fig:stream}
+\includegraphics[width=\linewidth]{up_down}
+\caption{Essential gene analysis result when regarding the cd69 higher expressed group as treatment group and lower expressed one as control.}
+\label{fig:up_down}
 \end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\linewidth]{down_up}
+    \caption{Essential gene analysis result when regarding the cd69 lower expressed group as treatment group and higher expressed one as control.}
+    \label{fig:down_up}
+    \end{figure}
 
 
 \end{document}
